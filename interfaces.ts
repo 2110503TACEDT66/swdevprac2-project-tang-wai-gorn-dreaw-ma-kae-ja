@@ -7,3 +7,18 @@ export interface ReservationItem{
     returnDate: string,
     returnLocation: string
 }
+
+
+export interface Dentist{
+    id: string,
+    name: string,
+    experience:number,
+    expertise:number
+}
+
+export interface DentistJson {
+    success: boolean,
+    count: number,
+    pagination: Object,
+    data: Dentist[]
+  }
