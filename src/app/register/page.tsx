@@ -17,6 +17,8 @@ export default function Register() {
     const addUser = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         await userRegister(formData.name, formData.tel, formData.email, formData.password);
+        await userLogin(formData.email, formData.password);
+        window.location.href = '/';
     };
 
     return (
