@@ -9,7 +9,9 @@ export default async function TopMenu(){
     const session = await getServerSession(authOptions)
     return(
         <div className={styles.menucontainer}>
-            <Image src={'/img/logo.png'} className={styles.logoimg} alt='logo' width={0} height={0} sizes='100vh' />
+            <Link href='/'>
+            <Image src={'/img/logo.png'} className={styles.logoimg} alt='logo' width={0} height={0} sizes='100vh'/>
+            </Link>
             <TopMenuItem title='Dentists' pageRef='/dentist'/>
             <TopMenuItem title='Reservations' pageRef='/reservations'/>
             <TopMenuItem title='About' pageRef='/about'/>

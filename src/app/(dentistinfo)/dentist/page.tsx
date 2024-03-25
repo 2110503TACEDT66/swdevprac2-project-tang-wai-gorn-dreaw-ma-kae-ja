@@ -8,8 +8,8 @@ export default function Dentist(){
 
     return (
         <main className="text-center p-5">
-            <h1 className="text-xl font-medium">Select Your Dentist</h1>
-            <Suspense fallback={<p>Loading ... <LinearProgress/></p>}>
+            <h1 className="text-xl font-medium text-black">Select Your Dentist</h1>
+            <Suspense fallback={<p className="text-black">Loading ... <LinearProgress/></p>}>
                 <DentistCatalog dentistsJson={dentists}/>
             </Suspense>
         </main>

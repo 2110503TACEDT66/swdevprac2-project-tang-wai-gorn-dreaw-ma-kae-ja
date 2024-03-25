@@ -6,7 +6,7 @@ export default async function DentistCatalog({dentistsJson}: {dentistsJson:Promi
     const dentistsJsonReady = await dentistsJson
     return(
         <div>
-            <div>Explore {dentistsJsonReady.count} dentists</div>
+            <div className="text-black">Explore {dentistsJsonReady.count} dentists</div>
             <div style={{margin: "20px", display: "flex", flexDirection:"row", alignContent:"space-around", justifyContent:"space-around", flexWrap:"wrap"}}>
                 {
                     dentistsJsonReady.data.map((dentist:Dentist) => (
