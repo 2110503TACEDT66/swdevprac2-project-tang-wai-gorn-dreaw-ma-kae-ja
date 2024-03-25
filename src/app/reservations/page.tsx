@@ -8,7 +8,7 @@ import { AppDispatch } from "@/redux/store";
 import { ReservationItem } from "../../../interfaces";
 import { addReservation } from "@/redux/features/cartSlice";
 import { TextField } from "@mui/material";
-
+import addBooking from "@/libs/addBooking";
 export default function Reservations(){
 
     const urlParams = useSearchParams();
@@ -28,14 +28,14 @@ export default function Reservations(){
         }
     }
 
-    const [name, setName] = useState<string>('');
+    const [name, setName] = useState<string | null>(dentistName);
     const [pickupDate, setPickupDate] = useState<Dayjs|null>(null)
 
     return(
         <main className="w-[100%] flex flex-col items-center space-y-4">
             <div className="text-xl font-medium">New Dentist Booking</div>
             <div className="w-fit space-y-2">
-                <TextField variant="standard" name="Name" label="Name"
+                <TextField variant="standard" name="Name" label="Name" defaultValue={dentistName}
                 onChange={(e)=>{setName(e.target.value)}}/>
             </div>
             <div className="w-fit space-y-2">
