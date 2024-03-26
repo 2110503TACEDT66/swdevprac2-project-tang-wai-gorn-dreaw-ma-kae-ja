@@ -1,6 +1,5 @@
 import getDentist from "@/libs/getDentist";
 import Link from "next/link";
-import getMe from "@/libs/getUserProfile";
 import { Session, getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import getUserProfile from "@/libs/getUserProfile";
@@ -18,7 +17,7 @@ export default async function DentistDetailPage({ params }: { params: { id: stri
                 <div className="mt-10">
                     <div className="text-lg mb-4">Experience: {dentistDetail.data.experience} years</div>
                     <div className="text-lg mb-4">Expertise: {dentistDetail.data.expertise}</div>
-                    <Link href={`/booking?id=${params.id}&name=${dentistDetail.data.name}&userid=${userDetail.data._id}`}>
+                    <Link href={`/booking?id=${params.id}&name=${dentistDetail.data.name}&userid=${userDetail.data._id}&token=${session?.user.token}`}>
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Book this dentist
                         </button>
