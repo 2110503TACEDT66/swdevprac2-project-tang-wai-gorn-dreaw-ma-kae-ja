@@ -12,7 +12,7 @@ export default function BookingCard({booking, token} : {booking:ReservationItem,
         window.location.reload();
     }
 
-    const [newDate, setNewDate] = useState(booking.apptDate)
+    const [newDate, setNewDate] = useState(new Date(booking.apptDate).toLocaleString('en-US', { dateStyle: 'short'}))
     const handleUpdate = (booking: ReservationItem) => {
         updateBooking(newDate, booking._id, token);
         alert('Appointment Updated!')
@@ -39,7 +39,7 @@ export default function BookingCard({booking, token} : {booking:ReservationItem,
                 </div>
                 <div className="text-black text-lg relative left-[30px]">
                     {/* ApptDate*/}AppointmentDate :
-                    <input className="bg-slate-300  p-1 rounded" value={newDate} defaultValue={booking.apptDate} onChange={handleDateChange}></input>
+                    <input className="bg-slate-300  p-1 rounded" value={newDate} defaultValue={new Date(booking.apptDate).toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })} onChange={handleDateChange}></input>
                 </div>
                 <div className="left-[30px] absolute h-[10%] bottom-[10%] flex flex-row">
                     <button className="bg-blue-500 hover:bg-blue-700 text-white rounded-lg p-[5px] mx-[10px]" onClick={()=> handleUpdate(booking)}>Save Edit</button>
