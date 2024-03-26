@@ -41,9 +41,9 @@ export default function BookingCard({booking, token} : {booking:ReservationItem,
                     {/* ApptDate*/}AppointmentDate :
                     <input className="bg-slate-300  p-1 rounded" value={newDate} defaultValue={booking.apptDate} onChange={handleDateChange}></input>
                 </div>
-                <div className="absolute h-[10%] bottom-[5%] flex flex-row">
-                    <button className="bg-orange-500 hover:bg-orange-700 rounded-lg p-[5px] mx-[10px]" onClick={()=> handleUpdate(booking)}>Save Edit</button>
-                    <button className="bg-red-600 hover:bg-red-800 rounded-lg p-[5px] mx-[10px]" onClick={()=> handleDelete(booking)}>Delete Booking</button>
+                <div className="left-[30px] absolute h-[10%] bottom-[10%] flex flex-row">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white rounded-lg p-[5px] mx-[10px]" onClick={()=> handleUpdate(booking)}>Save Edit</button>
+                    <button className="bg-red-600 hover:bg-red-800 text-white rounded-lg p-[5px] mx-[10px]" onClick={()=> handleDelete(booking)}>Delete Booking</button>
                 </div>
             </div>
             
