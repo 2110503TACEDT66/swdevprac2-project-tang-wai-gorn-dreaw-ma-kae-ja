@@ -3,10 +3,6 @@ import DateReserve from "@/components/DateReserve";
 import dayjs, { Dayjs } from "dayjs";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-import { ReservationItem } from "../../../interfaces";
-import { addReservation } from "@/redux/features/cartSlice";
 import { TextField } from "@mui/material";
 import addBooking from "@/libs/addBooking";
 export default function Reservations(){
@@ -16,6 +12,7 @@ export default function Reservations(){
     const dentistName = urlParams.get('name');
     const userid = urlParams.get('userid')
     const token = urlParams.get('token')
+    
     const makeReservation = () => {
         if(did && pickupDate && userid) {
             addBooking(dayjs(pickupDate).format("YYYY/MM/DD"), userid, did, token)
@@ -31,7 +28,6 @@ export default function Reservations(){
             <div className="w-fit space-y-2">
                 <TextField variant="standard" name="Name" label="Name" defaultValue={dentistName}
                 onChange={(e)=>{setName(e.target.value)}}/> 
-                {/*should be dropdown list of dentist?*/}
             </div>
             <div className="w-fit space-y-2">
                 <div className="text-md text-left text-gray-600">Pick-Up Appointment Date</div>
