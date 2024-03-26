@@ -1,7 +1,13 @@
 export interface ReservationItem{
+    id:string,
     apptDate: string,
     user: string,
     dentist: string
+}
+
+export interface BookingJson{
+    count:number,
+    data: ReservationItem[]
 }
 
 
