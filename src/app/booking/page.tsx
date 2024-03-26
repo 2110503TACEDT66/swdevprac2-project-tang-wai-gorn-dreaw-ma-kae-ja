@@ -37,7 +37,7 @@ export default function Reservations(){
             <div className="w-fit space-y-2">
                 <TextField variant="standard" name="Name" label="Name" defaultValue={dentistName}
                 onChange={(e)=>{setName(e.target.value)}}/> 
-                {/*should be dropdown?*/}
+                {/*should be dropdown list of dentist?*/}
             </div>
             <div className="w-fit space-y-2">
                 <div className="text-md text-left text-gray-600">Pick-Up Appointment Date</div>
