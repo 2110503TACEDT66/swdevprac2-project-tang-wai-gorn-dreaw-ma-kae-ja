@@ -1,4 +1,4 @@
-export default async function updateBooking(apptDate: string, user: string, did: string, bid:string, token:string){
+export default async function updateBooking(apptDate: string, bid:string, token:string){
     
     const response = await fetch(`http://localhost:5000/api/v1/Bookings/${bid}`, {
         method: "PUT",
@@ -8,7 +8,6 @@ export default async function updateBooking(apptDate: string, user: string, did:
         },
         body: JSON.stringify({
             apptDate: apptDate,
-            dentist: did
         }),
     })
 
