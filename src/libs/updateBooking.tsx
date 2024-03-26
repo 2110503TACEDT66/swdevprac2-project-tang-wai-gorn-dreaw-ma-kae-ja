@@ -1,6 +1,6 @@
 export default async function updateBooking(apptDate: string, bid:string, token:string){
     
-    const response = await fetch(`http://localhost:5000/api/v1/Bookings/${bid}`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/Bookings/${bid}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
