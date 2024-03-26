@@ -23,8 +23,8 @@ export default function BookingCard({booking, token} : {booking:ReservationItem,
     };
 
     return (
-        <main className="bg-slate-200 flex flex-row">
-            <div className='w-[50%] p-5 relative rounded-t-lg'>
+        <main className="bg-slate-200 m-5 flex flex-row rounded-lg">
+            <div className='w-[45%] p-5 relative rounded-t-lg'>
                 <img src='/img/dentist-default.jpg' alt='Dentist Image Template' className="w-100 h-[285px] rounded-xl" />
             </div>
             <div className="relative w-[60%] pt-10 pr-5 text-left"> 
@@ -37,13 +37,13 @@ export default function BookingCard({booking, token} : {booking:ReservationItem,
                 <div className="text-black text-lg relative left-[30px] pb-[32px]">
                     {/*dentistExpertise*/}Expertise : {booking.dentist.expertise}
                 </div>
-                <div className="text-black text-md relative left-[30px]">
+                <div className="text-black text-lg relative left-[30px]">
                     {/* ApptDate*/}AppointmentDate :
-                    <input value={newDate} defaultValue={booking.apptDate} onChange={handleDateChange}></input>
+                    <input className="bg-slate-300  p-1 rounded" value={newDate} defaultValue={booking.apptDate} onChange={handleDateChange}></input>
                 </div>
                 <div className="absolute h-[10%] bottom-[5%] flex flex-row">
-                    <button className="bg-orange-500 rounded-lg p-[5px] mx-[10px]" onClick={()=> handleUpdate(booking)}>Save Edit</button>
-                    <button className="bg-red-600 rounded-lg p-[5px] mx-[10px]" onClick={()=> handleDelete(booking)}>Delete Booking</button>
+                    <button className="bg-orange-500 hover:bg-orange-700 rounded-lg p-[5px] mx-[10px]" onClick={()=> handleUpdate(booking)}>Save Edit</button>
+                    <button className="bg-red-600 hover:bg-red-800 rounded-lg p-[5px] mx-[10px]" onClick={()=> handleDelete(booking)}>Delete Booking</button>
                 </div>
             </div>
             

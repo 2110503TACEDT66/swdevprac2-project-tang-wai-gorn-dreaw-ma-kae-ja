@@ -13,7 +13,7 @@ export default async function MyBooking(){
 
     return (
         <main className="text-center p-5">
-            <h1 className="text-xl font-medium text-black">Manage Your Booking</h1>
+            <h1 className="text-2xl mt-5 font-medium text-black">Manage Your Booking</h1>
             <Suspense fallback={<p className="text-black">Loading ... <LinearProgress/></p>}>
                 <ReservationCart bookingJson={bookings}/>
             </Suspense>
