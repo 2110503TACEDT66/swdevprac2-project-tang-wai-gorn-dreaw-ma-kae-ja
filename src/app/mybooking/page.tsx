@@ -1,5 +1,3 @@
-import getDentists from "@/libs/getDentists";
-import DentistCatalog from "@/components/DentistCatalog";
 import { Suspense } from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 import getBooking from "@/libs/getBooking";
@@ -9,7 +7,7 @@ import ReservationCart from "@/components/ReservationCart";
 export default async function MyBooking(){
 
     const session = await getServerSession(authOptions);
-    const bookings = getBooking(session?.user.token);
+    const bookings = await getBooking(session?.user.token || undefined);
 
     return (
         <main className="text-center p-5">

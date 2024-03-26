@@ -1,10 +1,6 @@
-import { Link } from "@mui/material"
-import ProductCard from "./ProductCard"
-import { BookingJson, Dentist, DentistJson, ReservationItem } from "../../interfaces"
-import updateBooking from "@/libs/updateBooking"
+import { BookingJson, ReservationItem } from "../../interfaces"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
-import deleteBooking from "@/libs/deleteBooking"
 import BookingCard from "./BookingCard"
 
 export default async function ReservationCart({bookingJson}: {bookingJson:BookingJson}){

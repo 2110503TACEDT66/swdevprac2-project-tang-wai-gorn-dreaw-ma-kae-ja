@@ -2,7 +2,7 @@ export interface ReservationItem{
     _id:string,
     apptDate: string,
     user: string,
-    dentist: string
+    dentist: Dentist
 }
 
 export interface BookingJson{

@@ -19,13 +19,13 @@ export default async function TopMenu(){
                 <TopMenuItem title='Your Booking' pageRef='/mybooking'/>
                 <TopMenuItem title='Register' pageRef='/register'/>
                 {
-                    session? <Link href='/api/auth/signout' className='no-underline'>
-                        <div className="flex items-center h-full pr-5 pl-2 text-cyan-600 text-sm font-semibold hover:font-extrabold no-underline">
+                    session? <Link href='/api/auth/signout'>
+                        <div className="flex items-center h-full pr-5 pl-2 text-cyan-600 text-sm font-semibold hover:font-extrabold">
                             Sign-Out
                             </div>
                         </Link>
-                    : <Link href='/api/auth/signin' className='no-underline'>
-                        <div className="flex items-center h-full pr-5 pl-2 text-cyan-600 text-sm font-semibold hover:font-extrabold no-underline">
+                    : <Link href='/api/auth/signin'>
+                        <div className="flex items-center h-full pr-5 pl-2 text-cyan-600 text-sm font-semibold hover:font-extrabold">
                             Sign-In
                             </div>
                         </Link>

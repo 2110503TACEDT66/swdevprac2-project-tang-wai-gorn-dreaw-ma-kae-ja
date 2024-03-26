@@ -8,7 +8,7 @@ export default async function DentistDetailPage({ params }: { params: { id: stri
     const dentistDetail = await getDentist(params.id);
     
     const session = await getServerSession(authOptions)
-    const userDetail = await getUserProfile(session?.user.token)
+    const userDetail = await getUserProfile(session?.user.token || undefined)
     return (
         <main className="container mx-auto px-4 py-8 flex flex-col items-center">
             <h1 className="text-3xl font-semibold mb-4 text-center">{dentistDetail.data.name}</h1>
