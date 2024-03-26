@@ -14,6 +14,7 @@ export default async function addBooking(apptDate: string, user: string, did: st
             user: user
         }),
     });
-    if (!response.ok) throw new Error("Failed to add a booking");
+    if(response.status === 400) alert('you can only book 1 booking!!')
+    else if (response.status === 401) throw new Error("Failed to add a booking");
     return await response.json();
 }
