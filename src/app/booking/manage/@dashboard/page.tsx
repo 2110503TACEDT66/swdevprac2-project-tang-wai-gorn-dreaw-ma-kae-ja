@@ -22,8 +22,8 @@ export default async function DashboardPage(){
                 "expertise": expertise,
             })
         } catch(error){ console.log(error)}
-        revalidateTag("cars")
-        redirect("/car")
+        revalidateTag("dentists")
+        redirect("/dentist")
     }
 
     const session = await getServerSession(authOptions)
