@@ -17,7 +17,7 @@ export default async function ReservationCart({bookingJson}: {bookingJson:Bookin
             <div style={{margin: "20px", display: "flex", flexDirection:"row", alignContent:"space-around", justifyContent:"space-around", flexWrap:"wrap"}}>
                 {
                     bookingJsonReady.data.map((booking:ReservationItem)=> (
-                        <div className="relative min-w-[750px] w-[50vw] h-[80vh] space-y-2 shadow-2xl rounded-3xl bg-white p-[45px]">
+                        <div className="relative min-w-[750px] w-[50vw] h-[60vh] space-y-2 shadow-2xl rounded-3xl bg-white p-[45px]">
                             <div className='w-[50%] h-[55%] relative rounded-t-lg'>
                                 <img src='/img/dentist-default.jpg' alt='Dentist Image Template' className="w-100 h-[285px] rounded-xl" />
                             </div>
@@ -35,9 +35,9 @@ export default async function ReservationCart({bookingJson}: {bookingJson:Bookin
                                     {/* ApptDate*/}AppointmentDate : {booking.apptDate}
                                 </div>
                             </div>
-                            <div className="absolute h-1/5 left-[60%] bottom-[5%] flex flex-row">
-                                <button className="bg-orange-500 rounded-lg p-[10px] mx-[10px]">Edit Booking</button>
-                                <button className="bg-red-600 rounded-lg p-[10px] mx-[10px]" onClick={deleteBooking(booking.apptDate, booking.user, booking.dentist, booking.id, session?.user.token as string)}>Delete Booking</button>
+                            <div className="absolute h-1/5 left-[55%] bottom-[-2%] flex flex-row">
+                                <button className="h-[65px] w-[130px] bg-orange-500 rounded-lg p-[5px] mx-[15px]">Edit Booking</button>
+                                <button className="h-[65px] w-[130px] bg-red-600 rounded-lg p-[5px] mx-[15px]" onClick={deleteBooking(booking.apptDate, booking.user, booking.dentist, booking.id, session?.user.token as string)}>Delete Booking</button>
                             </div>
                         </div>
                     ))
