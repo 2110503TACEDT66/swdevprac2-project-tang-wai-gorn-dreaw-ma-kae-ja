@@ -6,7 +6,7 @@ import { ReservationItem } from "../../interfaces";
 export default function BookingCard({booking, token} : {booking:ReservationItem, token:string}) {
 
     const handleDelete = (booking: ReservationItem) => {
-        deleteBooking(booking.apptDate, booking.user, booking.dentist, booking.id, token);
+        deleteBooking(booking._id, token);
     }
 
     return (

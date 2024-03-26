@@ -1,5 +1,5 @@
 
-export default async function deleteBooking(apptDate: string, user: string, did: string, bid:string, token:string){
+export default async function deleteBooking(bid:string, token:string){
     
     const response = await fetch(`http://localhost:5000/api/v1/Bookings/${bid}`, {
         method: "DELETE",

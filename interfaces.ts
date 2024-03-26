@@ -1,5 +1,5 @@
 export interface ReservationItem{
-    id:string,
+    _id:string,
     apptDate: string,
     user: string,
     dentist: string
