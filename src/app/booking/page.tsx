@@ -18,7 +18,7 @@ export default function Reservations(){
     const token = urlParams.get('token')
     const makeReservation = () => {
         if(did && pickupDate && userid) {
-            addBooking('2021-10-02T17:00:00.000Z', userid, did, token)
+            addBooking(dayjs(pickupDate).format("YYYY/MM/DD"), userid, did, token)
         }
     }
 
