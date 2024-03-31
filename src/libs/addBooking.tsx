@@ -6,7 +6,7 @@ export default async function addBooking(appDate: string, userid: string, did: s
     const response = await fetch(`${process.env.BACKEND_URL}/api/v1/dentists/${did}/bookings`, {
         method: "POST",
         headers: {
-            "Content-Type": "application.json",
+            "Content-Type": "application/json",
             authorization: `Bearer ${token}`
         },
         body: JSON.stringify({
