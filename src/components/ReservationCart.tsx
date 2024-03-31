@@ -13,7 +13,7 @@ export default async function ReservationCart({bookingJson}: {bookingJson:Bookin
             <div style={{margin: "20px", display: "flex", flexDirection:"row", alignContent:"space-around", justifyContent:"space-around", flexWrap:"wrap"}}>
                 {
                     bookingJsonReady.data.map((booking:ReservationItem)=> (
-                        <BookingCard booking={booking} token={session?.user.token as string}/>
+                        <BookingCard booking={booking} token={session?.user.token as string} key={booking._id}/>
                     ))
                 }
             </div>

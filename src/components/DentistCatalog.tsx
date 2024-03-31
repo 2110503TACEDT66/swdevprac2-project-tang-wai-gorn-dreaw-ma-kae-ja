@@ -11,7 +11,7 @@ export default async function DentistCatalog({dentistsJson}: {dentistsJson:Promi
                 {
                     dentistsJsonReady.data.map((dentist:Dentist) => (
                         <Link href={`/dentist/${dentist.id}`} className="w-[100%] sm:w-[50%} md:w-[30%] lg:w-[25%] p-2 sm:p-4 md:p-4 lg:p-8">
-                        <ProductCard dentistName={dentist.name} experience={dentist.experience} expertise={dentist.expertise}/>
+                        <ProductCard dentistName={dentist.name} experience={dentist.experience} expertise={dentist.expertise} key={dentist.id}/>
                         </Link>
                     ))
                 }
