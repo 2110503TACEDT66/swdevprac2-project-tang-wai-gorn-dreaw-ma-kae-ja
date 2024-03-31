@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
-export default async function addBooking(apptDate: string, user: string, did: string, token: string | null) {
-    const userId = new mongoose.Types.ObjectId(user);
+export default async function addBooking(appDate: string, userid: string, did: string, token: string | null) {
+    const userId = new mongoose.Types.ObjectId(userid);
 
     const response = await fetch(`${process.env.BACKEND_URL}/api/v1/dentists/${did}/bookings`, {
         method: "POST",
@@ -10,8 +10,8 @@ export default async function addBooking(apptDate: string, user: string, did: st
             authorization: `Bearer ${token}`
         },
         body: JSON.stringify({
-            apptDate: apptDate,
-            user: user
+            apptDate: appDate,
+            user: userid
         })
     });
     if(response.status === 400) alert('you can only book 1 booking!!');
