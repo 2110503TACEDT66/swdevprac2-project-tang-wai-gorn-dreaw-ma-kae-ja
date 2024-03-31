@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export default async function addBooking(appDate: string, userid: string, did: string, token: string | null) {
-    const userId = new mongoose.Types.ObjectId(userid);
+    // const userId = new mongoose.Types.ObjectId(userid);
 
     const response = await fetch(`${process.env.BACKEND_URL}/api/v1/dentists/${did}/bookings`, {
         method: "POST",
